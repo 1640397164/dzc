@@ -1,0 +1,16 @@
+1.copWithin()
+   定义:用于从数组的指定位置拷贝元素到数组的另一个指定位置中
+   语法:array.copyWithin(target, start, end)
+   参数:   target:复制到的位置(必选)
+           strart:起始复制的位置(可选)
+           end:结束复制的位置(可选)
+    返回值:数组
+2.entries() 
+   定义:返回一个数组的迭代对象,该对象包含数组的值键值对(key/value)
+   语法:array.entries()
+3.fill()  
+4.find() 
+5.findIndex() 
+6.from()  
+7.includes() 
+8.keys()
