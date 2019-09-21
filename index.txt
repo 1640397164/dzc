@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			#box{
+			height:300px;
+			width: 300px;
+			border: 1px solid black;
+			overflow: hidden;
+			
+			}
+			
+			.btn button{
+			  display: inline-block;
+			  height: 30px;
+			  width: 30px;
+			  border: 1px solid red;
+			  text-align: center;
+			  line-height: 20px;
+			  border-radius: 50%;
+			  margin: 0 20px;
+			 
+			  
+		} 
+		
+		</style>
+		
+			
+		</span>
+		<div id="box">
+			<img src="img/1.jpg" height="300px;" width="300px";>
+			<img src="img/2.jpg" height="300px;" width="300px";>
+			<img src="img/3.jpg" height="300px;" width="300px";>
+			<img src="img/4.jpg" height="300px;" width="300px";>
+		</div>
+		
+		<div class="btn">
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>4</button>
+		</div>
+		<script type="text/javascript">
+			//1.定义一个计数器  var num = 0;
+			//2.把所有的图片隐藏
+			//每个1秒,让计数器+1
+			//获取图片数组  0  1  2  3
+			//把计数器的值当成索引,由于计数器每隔一秒改变一次.所以图片每隔一秒进行一次改变
+			var num = 0;
+			var imgs = document.getElementsByTagName("img");
+			var btns = document.getElementsByTagName("button");
+			function show(){
+				num++;
+					if(num==imgs.length){
+						num=0;
+					}
+					
+					
+					for(var i = 0;i<imgs.length;i++){
+							imgs[i].style.opacity=0.1;
+						    btns[i].className="";
+						}
+					
+					
+					var op=0;
+					var opcity = setInterval(function(){
+						op++;
+						imgs[num].style.opacity=op/20;
+					btns[num].calssName="bgred";
+						if(op>=20){
+							clearInterval(opcity);
+						}
+					},50)									
+					
+					
+					
+				for(var i=0;i<imgs.length;i++){
+					if(i==num){
+						imgs[num].style.display="block";
+						btns[num].style.backgroundColor="red";
+				}else{
+						imgs[i].style.display="none";
+						btns[i].style.backgroundColor="white";
+					}					
+				}
+			}
+			setInterval(show,1000);
+			
+			
+		</script>
+	</body>
+</html>
